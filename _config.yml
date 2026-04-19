@@ -5,8 +5,8 @@ permalink: /:title/
 url: "https://jillholmes.com"
 baseurl: ""
 
+theme: minima
 
-theme:al-folio
 name: Jill Holmes
 
 # Optional but recommended
