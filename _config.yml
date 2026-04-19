@@ -1,0 +1,12 @@
+title: "jillholmes.com"
+description: Bookmark this site to keep an eye on my updates!
+permalink: /:title/
+
+url: "https://jillholmes.com"
+baseurl: ""
+
+name: Jill Holmes
+
+# Optional but recommended
+show_downloads: false
+github_username: jillholmes   # your actual GitHub username (lowercase)
