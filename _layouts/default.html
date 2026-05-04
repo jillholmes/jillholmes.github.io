@@ -27,20 +27,38 @@
       </div>
     </header>
 
-    <!-- Main -->
+    <!-- Main Content -->
     <main class="container-lg fade-in">
       {{ content }}
     </main>
 
-    <!-- Dark footer -->
+    <!-- Footer -->
     <footer class="site-footer">
       <div class="container-lg">
-        <div>{{ site.name }} · {{ site.url }}</div>
+
+        <div style="margin-bottom:10px;">
+          {{ site.name }} · {{ site.url }}
+        </div>
+
+        <div style="display:flex; flex-wrap:wrap; gap:12px;">
+          <a href="https://www.churchofjesuschrist.org/" target="_blank" rel="noopener">
+            Church of Jesus Christ
+          </a>
+
+          <a href="https://mydsd.davis.k12.ut.us/" target="_blank" rel="noopener">
+            MyDSD
+          </a>
+
+          <a href="https://www.davis.k12.ut.us/" target="_blank" rel="noopener">
+            Davis School District
+          </a>
+        </div>
+
       </div>
     </footer>
 
+    <!-- Theme Toggle Script -->
     <script>
-      // Theme toggle
       const btn = document.getElementById('themeToggle');
       const root = document.documentElement;
 

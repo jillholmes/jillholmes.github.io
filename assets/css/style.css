@@ -23,6 +23,7 @@
   --footer: #0f0f0f;
 }
 
+/* BASE */
 body {
   margin: 0;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
@@ -31,23 +32,24 @@ body {
   line-height: 1.6;
 }
 
-/* Layout */
+/* LINKS */
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent-dark);
+}
+
+/* CONTAINER */
 .container-lg {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 18px;
 }
 
-/* LINKS */
-a {
-  color: var(--accent);
-  text-decoration: none;
-}
-a:hover {
-  color: var(--accent-dark);
-}
-
-/* STICKY HEADER */
+/* HEADER */
 .site-header {
   border-bottom: 1px solid var(--border);
   background: var(--bg);
@@ -67,17 +69,24 @@ a:hover {
   padding: 18px 0;
 }
 
+/* BRANDING */
 .site-title {
   font-size: 1.4rem;
-  font-weight: 600;
+  font-weight: 700;
+  color: var(--accent);
 }
 
 .site-tagline {
   font-size: 0.9rem;
-  color: var(--muted);
+  color: var(--accent-dark);
 }
 
-/* BUTTON */
+/* DARK MODE TAGLINE FIX */
+:root[data-theme="dark"] .site-tagline {
+  color: #cfcfcf;
+}
+
+/* THEME BUTTON */
 .theme-toggle {
   border: 1px solid var(--border);
   background: transparent;
@@ -98,14 +107,21 @@ main {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(6px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* STREAM / FEED */
+/* POST LIST (STREAM STYLE) */
 .post-list {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .post-list li {
@@ -134,7 +150,7 @@ main {
   color: var(--muted);
 }
 
-/* FOOTER (dark gray) */
+/* FOOTER (DARK GRAY) */
 .site-footer {
   background: var(--footer);
   color: #bbb;
@@ -143,12 +159,17 @@ main {
   font-size: 0.85rem;
 }
 
-/* CARD MODE (optional toggle class later) */
-.card-mode .post-list li {
-  border-radius: 14px;
+/* FOOTER LINKS */
+.site-footer a {
+  color: #bbb;
+  font-size: 0.85rem;
 }
 
-/* Typography polish */
+.site-footer a:hover {
+  color: var(--accent);
+}
+
+/* HEADINGS */
 h1, h2, h3 {
   letter-spacing: -0.02em;
 }
