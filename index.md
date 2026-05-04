@@ -1,13 +1,19 @@
 ---
 layout: default
-title: Jill Holmes - Home
+title: Jill
 ---
+
 ## Welcome to jillholmes.com
 
+<ul class="post-list">
 {% for post in site.posts limit:3 %}
-
-* [{{ post.title }}]({{ post.url }}) — {{ post.date | date: "%B %d, %Y" }}
+  <li>
+    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    <span class="post-date">— {{ post.date | date: "%B %d, %Y" }}</span>
+  </li>
 {% endfor %}
+</ul>
 
-[View all updates →](/updates)
-
+<p>
+  <a href="{{ '/updates' | relative_url }}">View all updates →</a>
+</p>
