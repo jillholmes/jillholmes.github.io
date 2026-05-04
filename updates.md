@@ -4,22 +4,26 @@ title: Updates
 permalink: /updates/
 ---
 
-## Thoughts, updates, and ideas from Jill Holmes.
-<p></p>
+<p class="updates-intro">Thoughts, updates, and ideas from Jill Holmes.</p>
 
-{% for post in site.posts %}
-<div style="margin-bottom: 40px; padding-bottom: 30px; border-bottom: 1px solid #eee;">
-  <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-  <p style="color: #666; font-size: 0.95em;">
+{% assign posts = site.posts | sort: "date" | reverse %}
+
+<div class="post-list">
+{% for post in posts %}
+<article class="post-card">
+  <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+  <p class="post-date">
     {{ post.date | date: "%B %d, %Y" }}
   </p>
   <div>
     {{ post.excerpt }}
   </div>
-  <p><a href="{{ post.url }}">Read more →</a></p>
-</div>
+  <p class="read-more"><a href="{{ post.url | relative_url }}">Read more &rarr;</a></p>
+</article>
 {% endfor %}
+</div>
 
-{% if site.posts.size == 0 %}
+{% if posts.size == 0 %}
 <p>No updates yet. Come back soon!</p>
 {% endif %}
+
