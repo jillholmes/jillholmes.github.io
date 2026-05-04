@@ -173,3 +173,12 @@ main {
 h1, h2, h3 {
   letter-spacing: -0.02em;
 }
+
+.site-footer a {
+  opacity: 0.85;
+  transition: opacity 0.15s ease, color 0.15s ease;
+}
+
+.site-footer a:hover {
+  opacity: 1;
+}
