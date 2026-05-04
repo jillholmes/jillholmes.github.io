@@ -10,3 +10,11 @@ name: Jill Holmes
 # Optional but recommended
 show_downloads: false
 github_username: jillholmes   # your actual GitHub username (lowercase)
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: default
+
