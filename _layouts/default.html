@@ -11,6 +11,7 @@
 
   <body>
 
+    <!-- Header -->
     <header class="site-header">
       <div class="container-lg">
         <h1>
@@ -20,13 +21,17 @@
       </div>
     </header>
 
-    <main class="container-lg" style="margin-top: 30px;">
+    <!-- Main content -->
+    <main class="container-lg">
       {{ content }}
     </main>
 
+    <!-- Footer -->
     <footer class="site-footer">
       <div class="container-lg">
-        <p>{{ site.name }} · {{ site.url }}</p>
+        <div>
+          © {{ site.time | date: "%Y" }} {{ site.name }}
+        </div>
       </div>
     </footer>
 
