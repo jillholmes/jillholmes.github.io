@@ -7,33 +7,53 @@
     {% seo %}
 
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+
+    <script>
+      document.documentElement.classList.add('js');
+    </script>
   </head>
 
   <body>
 
-    <!-- Header -->
-    <header class="site-header">
-      <div class="container-lg">
-        <h1>
-          <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
-        </h1>
-        <p>{{ site.description }}</p>
+    <!-- Sticky Header -->
+    <header class="site-header sticky">
+      <div class="container-lg header-inner">
+        <div>
+          <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+          <div class="site-tagline">{{ site.description }}</div>
+        </div>
+
+        <button id="themeToggle" class="theme-toggle">☾</button>
       </div>
     </header>
 
-    <!-- Main content -->
-    <main class="container-lg">
+    <!-- Main -->
+    <main class="container-lg fade-in">
       {{ content }}
     </main>
 
-    <!-- Footer -->
+    <!-- Dark footer -->
     <footer class="site-footer">
       <div class="container-lg">
-        <div>
-          © {{ site.time | date: "%Y" }} {{ site.name }}
-        </div>
+        <div>{{ site.name }} · {{ site.url }}</div>
       </div>
     </footer>
+
+    <script>
+      // Theme toggle
+      const btn = document.getElementById('themeToggle');
+      const root = document.documentElement;
+
+      const saved = localStorage.getItem('theme');
+      if (saved) root.setAttribute('data-theme', saved);
+
+      btn.addEventListener('click', () => {
+        const current = root.getAttribute('data-theme');
+        const next = current === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+      });
+    </script>
 
   </body>
 </html>
